@@ -1,0 +1,130 @@
+\documentclass[a4paper,14pt]{extarticle}
+\usepackage[margin=0.5in]{geometry}
+\usepackage[T1,T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{gensymb}
+\usepackage{systeme,mathtools}
+\usepackage{indentfirst}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{breqn}
+\usepackage{verbatim}
+\usepackage{listings}
+\lstset{
+    basicstyle=\ttfamily,
+    mathescape
+}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{pgfplots}
+\usepackage{transparent}
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{cleveref}
+\pgfplotsset{compat=1.16}
+
+\newcommand{\incfig}[2][1]{%
+    \def\svgwidth{#1\columnwidth}
+    \import{./figures/}{#2.pdf_tex}
+}
+
+\makeatletter
+\newenvironment{sqcases}{%
+    \matrix@check\sqcases\env@sqcases
+    }{%
+    \endarray\right.%
+}
+\def\env@sqcases{%
+    \let\@ifnextchar\new@ifnextchar
+    \left\lbrack
+    \def\arraystretch{1.2}%
+    \array{@{}l@{\quad}l@{}}%
+}
+\makeatother
+
+\pdfsuppresswarningpagegroup=1
+
+\DeclareRobustCommand{\divby}{%
+    \mathrel{\vbox{\baselineskip.65ex\lineskiplimit0pt\hbox{.}\hbox{.}\hbox{.}}}%
+}
+\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+
+\newtheorem{statement}{Statement}
+\crefname{statement}{statement}{Statements}
+\Crefname{statement}{Statement}{Statements}
+\newtheorem{corollary}{Corollary}
+\newtheorem{theorem}{Theorem}
+\newtheorem{application}{Application}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\newtheorem{example}{Example}
+\newtheorem{lemma}{Lemma}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{exercise}{Exercise}
+\newtheorem{suggestion}{Suggestion}
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+% some aliases
+\newcommand{\R}{\ensuremath \mathbb{R}}
+\newcommand{\Q}{\ensuremath \mathbb{Q}}
+\newcommand{\CC}{\ensuremath \mathbb{C}}
+\newcommand{\Z}{\ensuremath \mathbb{Z}}
+\newcommand{\N}{\ensuremath \mathbb{N}}
+\newcommand{\eps}{\ensuremath \varepsilon}
+\newcommand{\then}{\ensuremath \implies}
+\newcommand{\Mid}{\ensuremath \;\middle|\;}
+\newcommand{\Ot}{\widetilde{O}}
+\newcommand{\hw}{{\color{red} Homework}}
+
+% project-local aliases
+\newcommand{\A}{\ensuremath \mathfrak{A}}
+\newcommand{\E}{\ensuremath \mathbb{E}}
+\newcommand{\B}{\ensuremath \mathcal{B}}
+\newcommand{\p}{\ensuremath \mathcal{P}}
+\newcommand{\mua}{\ensuremath \mu^\ast}
+\newcommand{\LL}{\ensuremath \mathcal{L}}
+\newcommand{\lan}{\ensuremath \lambda_n}
+\newcommand{\alan}{\ensuremath \A_{\lan}}
+
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Real}{Re}
+\DeclareMathOperator{\Imaginary}{Im}
+\DeclareMathOperator*{\esssup}{ess\,sup}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\cc}{CC}
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
+
+\begin{document}
+    \title{Information Theory. \\ Lecture Notes, fall 2024/2025}
+    \author{Alexander Smal \\ Writen by Nikolai Chukhin (@hamerfall)}
+    \date{}
+    \maketitle
+    \newpage
+
+    \tableofcontents
+    \newpage
+
+    There will be homeworks (20), a midterm (30) and an exam (50).
+
+    \import{sections/}{01.tex}
+
+\end{document}
+
