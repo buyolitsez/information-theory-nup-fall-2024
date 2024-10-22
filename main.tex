@@ -22,7 +22,6 @@
     basicstyle=\ttfamily,
     mathescape
 }
-\usepackage{color}
 \usepackage{xcolor}
 \usepackage{pgfplots}
 \usepackage{transparent}
@@ -31,27 +30,9 @@
 \usepackage{pdfpages}
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage[color=red!20, textwidth=25mm, colorinlistoftodos]{todonotes}
 \usepackage{cleveref}
 \pgfplotsset{compat=1.16}
-
-\newcommand{\incfig}[2][1]{%
-    \def\svgwidth{#1\columnwidth}
-    \import{./figures/}{#2.pdf_tex}
-}
-
-\makeatletter
-\newenvironment{sqcases}{%
-    \matrix@check\sqcases\env@sqcases
-    }{%
-    \endarray\right.%
-}
-\def\env@sqcases{%
-    \let\@ifnextchar\new@ifnextchar
-    \left\lbrack
-    \def\arraystretch{1.2}%
-    \array{@{}l@{\quad}l@{}}%
-}
-\makeatother
 
 \pdfsuppresswarningpagegroup=1
 
@@ -125,6 +106,7 @@
     There will be homeworks (20), a midterm (30) and an exam (50).
 
     \import{sections/}{01.tex}
+    \import{sections/}{02.tex}
 
 \end{document}
 
