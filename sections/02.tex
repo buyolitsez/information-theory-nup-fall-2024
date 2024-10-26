@@ -9,6 +9,23 @@ Let $\alpha$ be a discrete random variable with values from the set $\{a_1, a_2,
 \]
 In some sense, Shannons Entropy if the form of the expected value of the information we obtain from each outcome.
 
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+        xlabel={$x$},
+        ylabel={$y$},
+        domain=0:1,
+        samples=1000,
+        grid=major,
+        ]
+        \addplot {-x * log2(x) - (1 - x) * log2(1 - x)};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Graphic of the binary entropy.}
+    \label{fig:telegram-cloud-document-2-5244613392966114249}
+\end{figure}
+
 Some properties:
 \begin{itemize}
     \item If $p_1 = \dots = p_k$, then $H(\alpha) = \log k$, so Shannon's entropy matches the Hartly's.
