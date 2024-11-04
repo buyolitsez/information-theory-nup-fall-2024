@@ -153,7 +153,15 @@ Since we have distribution $\alpha$, then we need at least $H(\alpha)$ bits to e
     See \Cref{fig:telegram-cloud-document-2-5244613392966114247}.
 \end{example}
 
-\begin{example}[Haffman Code]
+\begin{example}[Huffman Code]
+	We're given with probabilities $p_1, \ldots, p_n$.
+	Let's create a binary tree with weights in nodes.
+	Initially, we have $n$ leaves and each leaf has weight $p_i$.
+	On each step, take two roots of different components with the smallest weights and merge them into one node with the weight equal to the sum of the weights of the two nodes.
+	At the end, you will have a binary tree with $p_i$ in the leaves.
+	Now, assign $0$ to the left edge and $1$ to the right edge.
+	Then, path to each leaf will be a code for the corresponding letter.
+
     \todo[inline]{complete haffman code}
     Huffman is an optimal code.
     To prove that, one needs both Shannon theorems.
